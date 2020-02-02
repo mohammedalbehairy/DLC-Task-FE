@@ -1,0 +1,13 @@
+<div class="card text-center" *ngIf="user">
+  <div class="card-header">
+    User Details
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><b>User Name : </b>{{user.username}}</h5>
+    <p class="card-text"><b>Email : </b>{{user.email}}</p>
+    <a routerLink="/admin/list-users" class="btn btn-primary">Back To Users</a>
+  </div>
+  <div class="card-footer text-muted">
+    <b>{{user.isAdmin ? 'Admin':'Registered User'}}</b>
+  </div>
+</div>

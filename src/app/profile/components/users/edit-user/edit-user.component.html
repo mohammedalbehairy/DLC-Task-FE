@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Edit User</h1>
+    <a [routerLink]="['/admin/list-users']" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        class="fas fa-download fa-sm text-white-50"></i>Back to list</a>
+  </div>
+  <form [formGroup]="editForm" (ngSubmit)="editUser()">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+        <span *ngIf="email.touched && email.invalid" class="custom-error alert alert-danger">
+          <span *ngIf="email.errors.required">Please enter email</span>
+        </span>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label>User Name</label>
+        <input type="text" class="form-control" formControlName="username">
+        <span *ngIf="username.touched && username.invalid" class="custom-error alert alert-danger">
+          <span *ngIf="username.errors.required">Please enter username</span>
+        </span>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        <span *ngIf="password.touched && password.invalid" class="custom-error alert alert-danger">
+          <span *ngIf="password.errors.required">Please enter password</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitch1" formControlName="isAdmin">
+      <label class="custom-control-label" for="customSwitch1">Is Admin</label>
+    </div>
+
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Users</h1>
+  <a [routerLink]="['/admin/create-user']" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+      class="fas fa-download fa-sm text-white-50"></i>Create New</a>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 list-margin" *ngFor="let user of users">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{user.username}}</h5>
+        <p class="card-text">{{user.email}}</p>
+        <a routerLink='/admin/details-user/{{user._id}}' class="btn btn-info btn-margin">Details</a>
+        <a routerLink='/admin/edit-user/{{user._id}}' class="btn btn-warning btn-margin">Edit</a>
+        <button (click)="delete(user._id)" class="btn btn-danger btn-margin">Delete</button>
+        <p class="card-text alert alert-dark float-right"><small
+            class="text-muted">{{user.isAdmin ? 'Admin' : 'Registered User'}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

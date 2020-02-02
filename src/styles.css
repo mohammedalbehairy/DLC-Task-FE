@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.custom-error {
+    color: #af3e3e;
+    background-color: rgba(230, 82, 81, 0.2);
+    border-color: #d44b4b;
+    display: block;
+    margin-top: 0px;
+    border-radius: 25px
+  }
+  
+  .list-margin {
+    margin-bottom: 20px;
+  }
+
+  .btn-margin{
+    margin: 5px;
+  }

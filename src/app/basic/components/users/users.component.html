@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 list-margin" *ngFor="let user of users">
+      <div class="card border-info w-75">
+        <div class="card-body text-info">
+          <h5 class="card-title">{{user.username}}</h5>
+          <p class="card-text">{{user.email}}</p>
+          <a routerLink="/users/{{user._id}}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

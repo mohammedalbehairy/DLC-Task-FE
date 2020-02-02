@@ -1,0 +1,13 @@
+<div class="card text-center" *ngIf="post">
+  <div class="card-header">
+    {{post.categoryId.name}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.body}}.</p>
+    <a [routerLink]="['/posts']" class="btn btn-primary">Back To Posts</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{post.createdOn|date}}
+  </div>
+</div>

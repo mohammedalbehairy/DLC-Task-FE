@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Create Post</h1>
+    <a [routerLink]="['/admin/list-posts']" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        class="fas fa-download fa-sm text-white-50"></i>Back to list</a>
+  </div>
+
+  <form [formGroup]="createForm" (ngSubmit)="createPost()">
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Title" formControlName="title">
+        <span *ngIf="title.touched && title.invalid" class="custom-error alert alert-danger">
+          <span *ngIf="title.errors.required">Please enter title</span>
+        </span>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Category</label>
+        <select id="inputState" class="form-control" formControlName="category">
+          <option value="" selected>Choose...</option>
+          <option value="{{cat._id}}" *ngFor="let cat of categories">{{cat.name}}</option>
+        </select>
+        <span *ngIf="category.touched && category.invalid" class="custom-error alert alert-danger">
+          <span *ngIf="category.errors.required">Please select category</span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea class="form-control" rows="6" formControlName="body"></textarea>
+      <span *ngIf="body.touched && body.invalid" class="custom-error alert alert-danger">
+        <span *ngIf="body.errors.required">Please enter body</span>
+      </span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+
+</div>
