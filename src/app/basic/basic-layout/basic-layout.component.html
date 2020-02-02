@@ -13,9 +13,9 @@
 
       </ul>
       <button *ngIf="!isAuth" class="btn btn-outline-success my-2 my-sm-0"
-        [routerLink]="['/admin/auth/login']">Login</button>
+        [routerLink]="['/auth/login']">Login</button>
       <button *ngIf="!isAuth" class="btn btn-outline-success my-2 my-sm-0"
-        [routerLink]="['/admin/auth/register']">Register</button>
+        [routerLink]="['/auth/register']">Register</button>
       <button *ngIf="isAuth" class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">Logout</button>
       <button *ngIf="isAuth" class="btn btn-outline-success my-2 my-sm-0" (click)="goToDashboard()">Dashboard</button>
     </div>

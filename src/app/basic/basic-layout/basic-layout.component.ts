@@ -24,7 +24,7 @@ export class BasicLayoutComponent implements OnInit {
 
   logout() {
     this.authService.logOut();
-    this.router.navigate(['/admin/auth/login'])
+    this.router.navigate(['/auth/login'])
   }
 
   goToDashboard() {
