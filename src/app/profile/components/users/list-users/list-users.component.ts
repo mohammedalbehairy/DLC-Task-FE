@@ -38,7 +38,8 @@ export class ListUsersComponent implements OnInit {
         console.log(err);
 
       })
-
   }
-
+  get email() {
+    return localStorage.getItem('email');
+  }
 }

@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.registerForm);
 
     this.errorMessage = null;
     if (this.registerForm.invalid) {
@@ -63,7 +62,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/admin/list']).then().catch();
       },
       (err) => {
-        this.errorMessage = err.message;
+        this.errorMessage = err.error.message;
         this.isSubmitted = false;
       }
     );
