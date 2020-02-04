@@ -19,8 +19,8 @@ export class ListComponent implements OnInit {
     this.getAll();
   }
 
-  getAll() {
-    this.postsService.list().subscribe((data: any) => {
+  getAll(searchWord?) {
+    this.postsService.list(searchWord).subscribe((data: any) => {
       console.log(data);
       this.posts = data;
     }, (err => {
@@ -36,8 +36,16 @@ export class ListComponent implements OnInit {
       },
       err => {
         console.log(err);
-
       })
-
   }
+
+  search(searchWord) {
+    this.getAll(searchWord.value);
+  }
+
+  reset(searchWord) {
+    searchWord.value = '';
+    this.getAll();
+  }
+  
 }

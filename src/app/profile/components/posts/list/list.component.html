@@ -4,6 +4,18 @@
       class="fas fa-download fa-sm text-white-50"></i>Create New</a>
 </div>
 
+<div class="input-group">
+  <div class="input-group-prepend">
+    <button class="input-group-text" (click)="search(searchWord)">Search</button>
+  </div>
+  <input type="text" class="form-control" placeholder="Search in post body" #searchWord>
+  <div class="input-group-prepend">
+    <button class="input-group-text" (click)="reset(searchWord)">Reset</button>
+  </div>
+</div>
+<br><br>
+
+
 <div class="row" *ngIf="posts.length == 0">
   <div class="col-sm-12 list-margin">
     <div class="card">

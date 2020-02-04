@@ -1,5 +1,5 @@
 import { IPost } from './../models/IPost';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,8 +9,9 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
-  public list() {
-    return this.http.get('posts/my-posts');
+  public list(bodyWords?: string) {
+    const params = new HttpParams().set('bodyWords', bodyWords);
+    return this.http.get('posts/my-posts',{params});
   }
 
   public getDetails(id: string) {
