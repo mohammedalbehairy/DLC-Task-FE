@@ -1,5 +1,6 @@
+import { Params } from '@angular/router';
 import { IUser } from './../models/IUser';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,8 +10,9 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  public list() {
-    return this.http.get('users');
+  public list(email?: string) {
+    const params = new HttpParams().set('email', email);
+    return this.http.get('users',{params});
   }
 
   public create(user: IUser) {

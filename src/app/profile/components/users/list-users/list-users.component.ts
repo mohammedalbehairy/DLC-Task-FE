@@ -13,14 +13,16 @@ export class ListUsersComponent implements OnInit {
   constructor(
     private usersService: UsersService,
     private toastr: ToastrService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getAll();
   }
 
-  getAll() {
-    this.usersService.list().subscribe((data: any) => {
+  getAll(searchEmail?) {
+    console.log(searchEmail);
+    
+    this.usersService.list(searchEmail).subscribe((data: any) => {
       console.log(data);
       this.users = data;
     }, (err => {
@@ -41,5 +43,14 @@ export class ListUsersComponent implements OnInit {
   }
   get email() {
     return localStorage.getItem('email');
+  }
+
+  search(searchEmail) {
+    this.getAll(searchEmail.value);
+  }
+
+  reset(searchEmail) {
+    searchEmail.value = '';
+    this.getAll();
   }
 }
