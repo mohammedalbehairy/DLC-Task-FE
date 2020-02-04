@@ -31,7 +31,6 @@ export class UserDetailsComponent implements OnInit {
 
   getDetails() {
     this.generalService.getUserById(this.userId).subscribe(data => {
-      console.log(data);
       this.user = data;
     },
       err => {

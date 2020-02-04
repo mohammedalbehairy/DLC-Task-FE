@@ -20,10 +20,8 @@ export class ListUsersComponent implements OnInit {
   }
 
   getAll(searchEmail?) {
-    console.log(searchEmail);
     
     this.usersService.list(searchEmail).subscribe((data: any) => {
-      console.log(data);
       this.users = data;
     }, (err => {
       console.log(err);

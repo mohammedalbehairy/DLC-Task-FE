@@ -17,7 +17,6 @@ export class PostsComponent implements OnInit {
 
   getAll() {
     this.generalService.listPosts().subscribe((data: any) => {
-      console.log(data);
       this.posts = data;
     }, (err => {
       console.log(err);

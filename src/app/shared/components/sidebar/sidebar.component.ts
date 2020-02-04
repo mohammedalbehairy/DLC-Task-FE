@@ -16,7 +16,5 @@ export class SidebarComponent implements OnInit {
 
   checkIsAdmin() {
     this.isAdmin = this.authService.isAdmin();
-    console.log(this.isAdmin);
-    
   }
 }

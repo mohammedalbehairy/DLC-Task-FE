@@ -30,7 +30,6 @@ export class PostDetailsComponent implements OnInit {
 
   getDetails() {
     this.generalService.getPostById(this.postId).subscribe(data => {
-      console.log(data);
       this.post = data;
     },
       err => {

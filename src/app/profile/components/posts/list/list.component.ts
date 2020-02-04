@@ -21,7 +21,6 @@ export class ListComponent implements OnInit {
 
   getAll(searchWord?) {
     this.postsService.list(searchWord).subscribe((data: any) => {
-      console.log(data);
       this.posts = data;
     }, (err => {
       console.log(err);

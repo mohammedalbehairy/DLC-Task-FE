@@ -33,7 +33,6 @@ export class CreateComponent implements OnInit {
   }
 
   createPost() {
-    console.log(this.createForm);
     this.errorMessage = null;
     if (this.createForm.invalid) {
       this.errorMessage = 'Invalid Data';

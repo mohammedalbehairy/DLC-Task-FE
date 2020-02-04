@@ -41,7 +41,6 @@ export class EditUserComponent implements OnInit {
   }
 
   editUser() {
-    console.log(this.editForm);
     this.errorMessage = null;
     if (this.editForm.invalid) {
       this.errorMessage = 'Invalid Data';

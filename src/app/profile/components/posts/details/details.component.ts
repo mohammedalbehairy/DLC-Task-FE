@@ -31,7 +31,6 @@ export class DetailsComponent implements OnInit {
 
   getDetails() {
     this.postsService.getDetails(this.postId).subscribe(data => {
-      console.log(data);
       this.post = data;
     },
       err => {

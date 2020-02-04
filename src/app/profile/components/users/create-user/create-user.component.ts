@@ -35,7 +35,6 @@ export class CreateUserComponent implements OnInit {
   }
 
   createUser() {
-    console.log(this.createForm);
     this.errorMessage = null;
     if (this.createForm.invalid) {
       this.errorMessage = 'Invalid Data';
